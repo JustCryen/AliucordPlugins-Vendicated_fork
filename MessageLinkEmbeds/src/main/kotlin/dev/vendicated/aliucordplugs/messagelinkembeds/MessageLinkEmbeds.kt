@@ -119,7 +119,7 @@ private fun addEmbed(
                 eb.setImage(a.url, a.proxyUrl, a.height, a.width)
                 setImg = true
             }
-        } else if (a.height == null || isSpoiler) {
+        } else {
             descSuffix
                 .append(":paperclip:  ")
                 .append('[').append(a.filename).append(']')
