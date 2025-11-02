@@ -140,18 +140,18 @@ private fun addEmbed(
                 // Skip spoilered thumbnails
                 if (!t.url.contains("SPOILER_", ignoreCase = true)) {
                     eb.setThumbnail(t.url, t.proxyUrl, t.height, t.width)
+                    setThumb = true
                 }
             }
-            setThumb = true
         }
         if (!setImg && it.rawImage != null) {
             it.rawImage?.let { i ->
                 // Skip spoilered images
                 if (!i.url.contains("SPOILER_", ignoreCase = true)) {
                     eb.setImage(i.url, i.proxyUrl, i.height, i.width)
+                    setImg = true
                 }
             }
-            setImg = true
         }
         if (!setVideo && it.rawVideo != null) {
             it.rawVideo?.let { v ->
@@ -159,10 +159,10 @@ private fun addEmbed(
                 if (!v.url.contains("SPOILER_", ignoreCase = true)) {
                     eb.setVideo(v.url, v.proxyUrl, v.height, v.width)
                     eb.setType(EmbedType.VIDEO)
+                    setVideo = true
+                    setImg = true
                 }
             }
-            setVideo = true
-            setImg = true
         }
         if (description == null && it.description?.isEmpty() == false) {
             description = it.description
