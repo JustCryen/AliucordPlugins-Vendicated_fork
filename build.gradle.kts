@@ -59,13 +59,14 @@ subprojects {
 
         tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
             //kotlin {
-                compilerOptions {
-                    jvmTarget.set(JvmTarget.JVM_11)
+            //    compilerOptions {
+            //        jvmTarget.set(JvmTarget.JVM_11)
+                    kotlinOptions.jvmTarget = "17"
                     freeCompilerArgs.addAll(
                             "-Xno-call-assertions" ,
                             "-Xno-param-assertions" ,
                             "-Xno-receiver-assertions")
-                }
+            //    }
             //}
         }
     }
