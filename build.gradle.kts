@@ -58,18 +58,23 @@ subprojects {
         }
 
         tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
+            kotlinOptions {
+                jvmTarget = "11"
+                freeCompilerArgs = freeCompilerArgs + "-Xno-call-assertions" + "-Xno-param-assertions" + "-Xno-receiver-assertions"
+            }
+            //kotlinOptions.jvmTarget = "11"
+        }
+    }
             //kotlin {
             //    compilerOptions {
             //        jvmTarget.set(JvmTarget.JVM_11)
-                    kotlinOptions.jvmTarget = "17"
-                    freeCompilerArgs.addAll(
-                            "-Xno-call-assertions" ,
-                            "-Xno-param-assertions" ,
-                            "-Xno-receiver-assertions")
+            //        freeCompilerArgs.addAll(
+            //                "-Xno-call-assertions" ,
+            //                "-Xno-param-assertions" ,
+            //                "-Xno-receiver-assertions")
             //    }
             //}
-        }
-    }
+
 
     dependencies {
         val discord by configurations
