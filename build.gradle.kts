@@ -3,9 +3,20 @@ import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 buildscript {
     repositories {
+        mavenCentral()
+        maven {
+            url 'https://maven.google.com/'
+            name 'Google'
+        }
+    }
+    repositories {
         google()
         mavenCentral()
-        maven("https://maven.aliucord.com/snapshots")
+        //maven("https://maven.aliucord.com/snapshots")
+        maven {
+            name = "aliucordSnapshots"
+            url = uri("https://maven.aliucord.com/snapshots")
+        }
         maven("https://jitpack.io")
     }
     dependencies {
