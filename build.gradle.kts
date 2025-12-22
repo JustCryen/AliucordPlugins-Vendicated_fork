@@ -9,7 +9,7 @@ buildscript {
         maven("https://jitpack.io")
     }
     dependencies {
-        classpath("com.android.tools.build:gradle:7.0.4")
+        classpath("com.android.tools.build:gradle:7.6.3")
         classpath("com.aliucord:gradle:main-SNAPSHOT") {
             exclude("com.github.js6pak", "jadb")
         }
@@ -46,7 +46,6 @@ subprojects {
 
     android {
         compileSdkVersion(30)
-//        buildToolsVersion("30.0.1")
 
         defaultConfig {
             minSdk = 24
