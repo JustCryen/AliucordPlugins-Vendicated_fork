@@ -45,6 +45,7 @@ subprojects {
 
     android {
         compileSdkVersion(30)
+        buildToolsVersion(30.0.1)
 
         defaultConfig {
             minSdk = 24
@@ -82,10 +83,10 @@ subprojects {
     }
 }
 
-//task<Delete>("clean") {
-//    delete(rootProject.buildDir)
-//}
-
-tasks.register<Delete>("clean") {
-    delete(rootProject.layout.buildDirectory.dir("path"))
+task<Delete>("clean") {
+    delete(rootProject.buildDir)
 }
+
+//tasks.register<Delete>("clean") {
+//    delete(rootProject.layout.buildDirectory.dir("path"))
+//}
