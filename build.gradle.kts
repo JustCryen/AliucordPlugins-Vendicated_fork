@@ -62,10 +62,10 @@ subprojects {
             kotlin {
                 compilerOptions {
                     jvmTarget.set(JvmTarget.JVM_11)
-                    freeCompilerArgs = freeCompilerArgs +
+                    freeCompilerArgs.setFrom(freeCompilerArgs + 
                             "-Xno-call-assertions" +
                             "-Xno-param-assertions" +
-                            "-Xno-receiver-assertions"
+                            "-Xno-receiver-assertions")
                 }
             }
         }
