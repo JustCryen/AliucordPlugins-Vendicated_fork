@@ -25,15 +25,17 @@ jobs:
         ref: 'builds'
         path: 'builds'
 
-    - name: Setup JDK 17
-      uses: actions/setup-java@v1
+    - name: Setup JDK 11
+      uses: actions/setup-java@v2
       with:
-        java-version: 17
+        java-version: 11
+        distribution: zulu
+        cache: gradle
 
     - name: Setup Android SDK # v7.0
       uses: android-actions/setup-android@v2
-      with:
-        cmdline-tools-version: 8512546
+#      with:
+#        cmdline-tools-version: 8512546
 
     - name: Setup Gradle 7.6.3
       uses: gradle/actions/setup-gradle@v3
