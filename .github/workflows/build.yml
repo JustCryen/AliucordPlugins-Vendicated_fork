@@ -33,9 +33,9 @@ jobs:
         #cache: gradle
 
     - name: Setup Android SDK # v10.0
-      uses: android-actions/setup-android@v2.0.10
+      uses: android-actions/setup-android@v3
       with:
-        cmdline-tools-version: '9862592'
+        cmdline-tools-version: 9862592
 
     - name: Setup Gradle 7.6.3
       uses: gradle/actions/setup-gradle@v3
