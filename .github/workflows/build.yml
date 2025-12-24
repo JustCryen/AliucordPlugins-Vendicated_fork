@@ -32,10 +32,10 @@ jobs:
         distribution: zulu
         #cache: gradle
 
-    - name: Setup Android SDK # v7.0
+    - name: Setup Android SDK # v10.0
       uses: android-actions/setup-android@v2
       with:
-        cmdline-tools-version: 8512546
+        cmdline-tools-version: 9862592
 
     - name: Setup Gradle 7.6.3
       uses: gradle/actions/setup-gradle@v3
